@@ -9,19 +9,18 @@
 * [Default.aspx](./CS/Default.aspx) (VB: [Default.aspx](./VB/Default.aspx))
 * [Default.aspx.cs](./CS/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/Default.aspx.vb))
 <!-- default file list end -->
-# How to update the parameter value when the item's master filter state is changed
+# ASP.NET Web Forms Dashboard - How to update the parameter value when the item's master filter state is changed
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/t575012/)**
 <!-- run online end -->
 
+This example illustrates how to pass filter values to a parameter. The initial master filter state is set manually on page loading. To obtain changed master filter values, handle the [onItemMasterFilterStateChanged](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions?p=netframework#js_devexpress_dashboard_viewerapiextensionoptions_onitemmasterfilterstatechanged) event. Pass these values to the dashboard parameter using the [DashboardParameterDialogExtension.getParameters](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardParameterDialogExtension?p=netframework#js_devexpress_dashboard_dashboardparameterdialogextension_getparameters) method. To assign default master filter values, use the [Dashboard State](https://docs.devexpress.com/Dashboard/118733/web-dashboard/aspnet-web-forms-dashboard-control/manage-dashboard-state).
 
-<p>This example illustrates how to pass filter values to a parameter. The initial master filter state is set manually on page loading.<br><br>To obtain changed master filter values, handle the <a href="https://documentation.devexpress.com/#Dashboard/DevExpressDashboardWebScriptsASPxClientDashboard_ItemMasterFilterStateChangedtopic">ASPxClientDashboard.ItemMasterFilterStateChanged</a> event. Pass these values to the dashboard parameter using the <a href="https://documentation.devexpress.com/#Dashboard/DevExpressDashboardWebScriptsASPxClientDashboard_GetParameterstopic">ASPxClientDashboard.GetParameters</a> method. <br>To assign default master filter values, use <a href="https://documentation.devexpress.com/Dashboard/118733/Preparing-the-Designer-and-Viewer-Applications/Web-Dashboard/Manage-Dashboard-State">the Dashboard State</a>. Refer to the <a href="https://www.devexpress.com/Support/Center/p/T513681">Web Dashboard - How to specify a dashboard state manually in code</a> example for more information about this approach.<br><br><strong>See also:</strong><br><a href="https://www.devexpress.com/Support/Center/p/T495684">How to specify dashboard parameter values on the client side in the ASP.NET Dashboard Control</a></p>
+## Documentation
 
+- [Manage Dashboard State in ASP.NET Web Forms Applications](https://docs.devexpress.com/Dashboard/118733/web-dashboard/aspnet-web-forms-dashboard-control/manage-dashboard-state)
 
-<h3>Description</h3>
+## More Examples
 
-To obtain changed master filter values, handle the&nbsp;<a href="https://documentation.devexpress.com/#Dashboard/DevExpressDashboardWebScriptsASPxClientDashboard_ItemMasterFilterStateChangedtopic">ASPxClientDashboard.ItemMasterFilterStateChanged</a>&nbsp;event.&nbsp;Pass these values to the dashboard parameter using&nbsp;the&nbsp;<a href="https://documentation.devexpress.com/#Dashboard/DevExpressDashboardWebScriptsASPxClientDashboard_GetParameterstopic">ASPxClientDashboard.GetParameters</a>&nbsp;method.&nbsp;<br>To assign default master filter values, use&nbsp;<a href="https://documentation.devexpress.com/Dashboard/118733/Preparing-the-Designer-and-Viewer-Applications/Web-Dashboard/Manage-Dashboard-State">the Dashboard State</a>. Refer to the&nbsp;<a data-ticket="T513681">Web Dashboard - How to specify a dashboard state manually in code</a>&nbsp;example for more information about this approach.
-
-<br/>
-
-
+- [ASPxDashboard - How to specify a default dashboard state in code](https://github.com/DevExpress-Examples/aspxdashboard-how-to-specify-a-default-dashboard-state-in-code-t513681)
+- [ASPxDashboard - How to specify dashboard parameter values on the client side](https://github.com/DevExpress-Examples/aspxdashboard-how-to-specify-dashboard-parameter-values-on-the-client-side-t495684)
