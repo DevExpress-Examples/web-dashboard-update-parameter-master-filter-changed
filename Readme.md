@@ -6,8 +6,8 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [Default.aspx](./CS/DXApplication33/Default.aspx) (VB: [Default.aspx](./VB/DXApplication33/Default.aspx))
-* [Default.aspx.cs](./CS/DXApplication33/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/DXApplication33/Default.aspx.vb))
+* [Default.aspx](./CS/DXApplication33/Default.aspx)
+* [Default.aspx.cs](./CS/DXApplication33/Default.aspx.cs)
 <!-- default file list end -->
 # ASP.NET Web Forms Dashboard - How to update the parameter value when the item's master filter state is changed
 <!-- run online -->
