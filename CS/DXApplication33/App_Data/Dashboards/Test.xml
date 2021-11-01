@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Parameters example" />
+  <DataSources>
+    <SqlDataSource ComponentName="DataSource1">
+      <Name>CustOrdersDetail</Name>
+      <Connection Name="NorthwindConnectionString" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="CustOrdersDetail">
+        <Parameter Name="OrderIDParameter" Type="DevExpress.DataAccess.Expression">(null)([Parameters.OrderID] )</Parameter>
+        <Tables>
+          <Table Name="Order Details" />
+          <Table Name="Products" />
+          <Relation Type="Inner" Parent="Order Details" Nested="Products">
+            <KeyColumn Parent="ProductID" Nested="ProductID" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="Order Details" Name="UnitPrice" />
+          <Column Table="Products" Name="ProductName" />
+        </Columns>
+        <Filter>[Order Details.OrderID] = ?OrderIDParameter</Filter>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+    <SqlDataSource ComponentName="sqlDataSource1">
+      <Name>Orders</Name>
+      <Connection Name="NorthwindConnectionString" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Orders">
+        <Tables>
+          <Table Name="Orders" />
+        </Tables>
+        <Columns>
+          <Column Table="Orders" Name="OrderID" />
+          <Column Table="Orders" Name="ShipName" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="OrderID">
+      <DynamicListLookUpSettings DataSourceName="sqlDataSource1" DataMember="Orders" ValueMember="OrderID" DisplayMember="OrderID" />
+    </Parameter>
+  </Parameters>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Orders" DataSource="sqlDataSource1" DataMember="Orders">
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Dimension DataMember="OrderID" DefaultId="DataItem0">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+        </Dimension>
+        <Dimension DataMember="ShipName" DefaultId="DataItem1" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <Pie ComponentName="pieDashboardItem1" Name="Details" DataSource="DataSource1" DataMember="CustOrdersDetail" ShowPieCaptions="false">
+      <DataItems>
+        <Dimension DataMember="ProductName" DefaultId="DataItem0" />
+        <Measure DataMember="UnitPrice" DefaultId="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value DefaultId="DataItem1" />
+      </Values>
+    </Pie>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Weight="100">
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="100" />
+      <LayoutItem DashboardItem="pieDashboardItem1" Weight="100" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
