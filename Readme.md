@@ -18,6 +18,7 @@ This example illustrates how to pass filter values to a parameter. The initial
 
 ## Documentation
 
+- [Extensions Overview](https://docs.devexpress.com/Dashboard/117543/web-dashboard/ui-elements-and-customization/extensions-overview)
 - [Manage Dashboard State in ASP.NET Web Forms Applications](https://docs.devexpress.com/Dashboard/118733/web-dashboard/aspnet-web-forms-dashboard-control/manage-dashboard-state)
 
 ## More Examples
