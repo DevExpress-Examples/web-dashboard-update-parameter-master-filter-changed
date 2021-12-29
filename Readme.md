@@ -11,7 +11,7 @@
 <!-- default file list end -->
 # ASP.NET Web Forms Dashboard - How to update the parameter value when the item's master filter state is changed
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t575012/)**
+**[[Run Online]](https://codecentral.devexpress.com/128580393/)**
 <!-- run online end -->
 
 This example illustrates how to pass filter values to a parameter. The initial master filter state is set manually on page loading. To obtain changed master filter values, handle the [onItemMasterFilterStateChanged](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions?p=netframework#js_devexpress_dashboard_viewerapiextensionoptions_onitemmasterfilterstatechanged) event. Pass these values to the dashboard parameter using the [DashboardParameterDialogExtension.getParameters](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardParameterDialogExtension?p=netframework#js_devexpress_dashboard_dashboardparameterdialogextension_getparameters) method. To assign default master filter values, use the [Dashboard State](https://docs.devexpress.com/Dashboard/118733/web-dashboard/aspnet-web-forms-dashboard-control/manage-dashboard-state).
