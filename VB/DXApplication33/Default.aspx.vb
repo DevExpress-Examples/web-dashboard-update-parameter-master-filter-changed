@@ -1,7 +1,5 @@
 Imports DevExpress.DashboardCommon
 Imports DevExpress.DashboardWeb
-Imports DevExpress.DataAccess.Excel
-Imports DevExpress.DataAccess.Sql
 Imports System
 
 Namespace DXApplication33
