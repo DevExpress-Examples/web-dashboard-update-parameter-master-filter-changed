@@ -13,6 +13,8 @@ This example illustrates how to pass filter values to a parameter. The initial
 
 To assign default master filter values, use the [Dashboard State](https://docs.devexpress.com/Dashboard/118733/web-dashboard/aspnet-web-forms-dashboard-control/manage-dashboard-state).
 
+
+
 ## Files to Review
 
 * [Default.aspx](./CS/DXApplication33/Default.aspx) (VB: [Default.aspx](./VB/DXApplication33/Default.aspx))
