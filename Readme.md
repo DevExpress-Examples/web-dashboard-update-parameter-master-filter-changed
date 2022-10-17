@@ -3,15 +3,43 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# Dashboard for Web Forms - How to update the parameter value when the item's master filter state is changed
+# Dashboard for Web Forms - How to update the dashboard parameter value when the item's master filter state is changed
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/128580393/)**
 <!-- run online end -->
 
-This example illustrates how to pass filter values to a parameter. The initial master filter state is set manually on page loading. The [ViewerApiExtensionOptions.onItemMasterFilterStateChanged](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions?p=netframework#js_devexpress_dashboard_viewerapiextensionoptions_onitemmasterfilterstatechanged) event handler obtains changed master filter values. The [DashboardParameterDialogExtension.getParameters](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardParameterDialogExtension?p=netframework#js_devexpress_dashboard_dashboardparameterdialogextension_getparameters) method passes these values to the dashboard parameter. 
+This example illustrates how to pass master filter values to a hidden dashboard parameter. 
 
-To assign default master filter values, use the [Dashboard State](https://docs.devexpress.com/Dashboard/118733/web-dashboard/aspnet-web-forms-dashboard-control/manage-dashboard-state).
+![Web Dashboard](web-dashboard.png)
 
+
+The **Orders** grid item is bound to the **Orders** data source. The **Details** pie item is bound to the **CustOrdersDetail** data source. The grid's master filter values are passed to the **OrderID** dashboard parameter. The **OrderID** dashboard parameter is used to [filter](https://docs.devexpress.com/Dashboard/117192) the **CustOrdersDetail** data source (the **OrderIDParameter** query parameter is mapped to the **OrderID** dashboard parameter):
+
+![Data Source Filter](data-source-filter.png)
+
+
+The [ViewerApiExtensionOptions.onItemMasterFilterStateChanged](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions?p=netframework#js_devexpress_dashboard_viewerapiextensionoptions_onitemmasterfilterstatechanged) event handler obtains changed master filter values. The [DashboardParameterDialogExtension.getParameters](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardParameterDialogExtension?p=netframework#js_devexpress_dashboard_dashboardparameterdialogextension_getparameters) method obtains the dashboard  The [DashboardParameter.setValue](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.DashboardParameter#js_devexpress_dashboard_dashboardparameter_setvalue_value_) method passes these values to the **OrderID** dashboard parameter:
+
+```js
+var dashboardControl;
+
+function onBeforeRender(s, e) {
+	dashboardControl = s.GetDashboardControl();
+	var viewerApiExtension = dashboardControl.findExtension('viewerApi');
+	if (viewerApiExtension)
+		viewerApiExtension.on('itemMasterFilterStateChanged', onItemMasterFilterStateChanged);
+}
+function onItemMasterFilterStateChanged(e) {
+	if (e.itemName == "gridDashboardItem1") {
+		var dashboardParameterDialogExtension = dashboardControl.findExtension('dashboardParameterDialog');
+		var parameters = dashboardParameterDialogExtension.getParameters();
+		var parameter1 = parameters.getParameterByName("OrderID");
+		parameter1.setValue(e.values[0][0]);
+	}
+}
+```
+
+The initial master filter state is set manually on page loading. To assign default master filter values, use the [Dashboard State](https://docs.devexpress.com/Dashboard/118733/web-dashboard/aspnet-web-forms-dashboard-control/manage-dashboard-state).
 
 
 ## Files to Review
@@ -21,8 +49,9 @@ To assign default master filter values, use the [Dashboard State](https://docs.d
 
 ## Documentation
 
-- [Extensions Overview](https://docs.devexpress.com/Dashboard/117543/web-dashboard/ui-elements-and-customization/extensions-overview)
-- [Manage Dashboard State in ASP.NET Web Forms Applications](https://docs.devexpress.com/Dashboard/118733/web-dashboard/aspnet-web-forms-dashboard-control/manage-dashboard-state)
+- [Configure Query Parameters](https://docs.devexpress.com/Dashboard/117192/web-dashboard/create-dashboards-on-the-web/providing-data/working-with-sql-data-sources/pass-query-parameters?p=netframework)
+- [Dashboard Parameters](https://docs.devexpress.com/Dashboard/117062/web-dashboard/create-dashboards-on-the-web/data-analysis/dashboard-parameters?p=netframework)
+- [Manage Dashboard State](https://docs.devexpress.com/Dashboard/118733/web-dashboard/aspnet-web-forms-dashboard-control/manage-dashboard-state)
 
 ## More Examples
 
