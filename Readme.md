@@ -13,7 +13,7 @@ This example illustrates how to pass master filter values to a hidden dashboard
 ![Web Dashboard](web-dashboard.png)
 
 
-The **Orders** grid item is bound to the **Orders** data source. The **Details** pie item is bound to the **CustOrdersDetail** data source. The grid's master filter values are passed to the **OrderID** dashboard parameter. The **OrderID** dashboard parameter is used to [filter](https://docs.devexpress.com/Dashboard/117192) the **CustOrdersDetail** data source (the **OrderIDParameter** query parameter is mapped to the **OrderID** dashboard parameter):
+The **Orders** grid item is bound to the **Orders** data source, and the **Details** pie item is bound to the **CustOrdersDetail** data source. The grid's master filter values are passed to the **OrderID** dashboard parameter that is used to [filter](https://docs.devexpress.com/Dashboard/117192) the **CustOrdersDetail** data source (the **OrderIDParameter** query parameter is mapped to the **OrderID** dashboard parameter):
 
 ![Data Source Filter](data-source-filter.png)
 
