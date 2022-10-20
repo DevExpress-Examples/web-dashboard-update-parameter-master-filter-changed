@@ -2,11 +2,10 @@
 <Dashboard>
   <Title Text="Parameters example" />
   <DataSources>
-    <SqlDataSource ComponentName="DataSource1">
-      <Name>CustOrdersDetail</Name>
+    <SqlDataSource Name="CustOrdersDetail" ComponentName="DataSource1">
       <Connection Name="NorthwindConnectionString" FromAppConfig="true" />
       <Query Type="SelectQuery" Name="CustOrdersDetail">
-        <Parameter Name="OrderIDParameter" Type="DevExpress.DataAccess.Expression">(null)([Parameters.OrderID] )</Parameter>
+        <Parameter Name="OrderIDParameter" Type="DevExpress.DataAccess.Expression">(null)([Parameters.OrderID])</Parameter>
         <Tables>
           <Table Name="Order Details" />
           <Table Name="Products" />
@@ -22,8 +21,7 @@
       </Query>
       <ConnectionOptions CloseConnection="true" />
     </SqlDataSource>
-    <SqlDataSource ComponentName="sqlDataSource1">
-      <Name>Orders</Name>
+    <SqlDataSource Name="Orders" ComponentName="sqlDataSource1">
       <Connection Name="NorthwindConnectionString" FromAppConfig="true" />
       <Query Type="SelectQuery" Name="Orders">
         <Tables>
@@ -38,9 +36,7 @@
     </SqlDataSource>
   </DataSources>
   <Parameters>
-    <Parameter Name="OrderID">
-      <DynamicListLookUpSettings DataSourceName="sqlDataSource1" DataMember="Orders" ValueMember="OrderID" DisplayMember="OrderID" />
-    </Parameter>
+    <Parameter Name="OrderID" Visible="false" />
   </Parameters>
   <Items>
     <Grid ComponentName="gridDashboardItem1" Name="Orders" DataSource="sqlDataSource1" DataMember="Orders">
