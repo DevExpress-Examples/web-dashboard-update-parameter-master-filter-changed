@@ -43,6 +43,7 @@ The default master filter and dashboard parameter values are specified in the [d
 
 ## Files to Review
 
+* [script.js](./CS/DXApplication33/Content/script.js)
 * [Default.aspx](./CS/DXApplication33/Default.aspx) (VB: [Default.aspx](./VB/DXApplication33/Default.aspx))
 * [Default.aspx.cs](./CS/DXApplication33/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/DXApplication33/Default.aspx.vb))
 
