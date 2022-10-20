@@ -54,5 +54,6 @@ The default master filter and dashboard parameter values are specified in the [d
 
 ## More Examples
 
+- [Dashboard for ASP.NET Core - How to update the parameter value when the item's master filter state is changed](https://github.com/DevExpress-Examples/asp-net-core-dashboard-update-parameter-master-filter-changed)
 - [Dashboard for Web Forms - How to specify a default dashboard state in code](https://github.com/DevExpress-Examples/web-forms-dashboard-specify-default-dashboard-state-in-code)
 - [Dashboard for Web Forms - How to specify dashboard parameter values on the client side](https://github.com/DevExpress-Examples/aspxdashboard-how-to-specify-dashboard-parameter-values-on-the-client-side-t495684)
