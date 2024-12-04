@@ -1,6 +1,6 @@
 <%@ Page Language="VB" AutoEventWireup="true" MasterPageFile="~/Main.Master" CodeBehind="Default.aspx.vb" Inherits="DXApplication33.Default" %>
 
-<%@ Register Assembly="DevExpress.Dashboard.v24.2.Web.WebForms, Version=24.2.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.DashboardWeb" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Dashboard.v24.2.Web.WebForms, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.DashboardWeb" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script type="text/javascript">
